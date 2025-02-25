@@ -2,12 +2,6 @@ from flask import Flask, redirect, render_template, request
 import datetime
 import mysql.connector
 
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="db_feedback"
-)
 
 app = Flask(__name__)
 
@@ -22,11 +16,19 @@ def cadastra_ms():
     data_hora = datetime.datetime.today()
     menssagem = request.form.get("comentario")
 
+    mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="db_feedback"
+)
+
+
     valores = (data_hora, usuario, menssagem)
     
     mycursor = mydb.cursor()
 
-    sql = (f"""INSERT INTO tb_comentarios(
+    sql = ("""INSERT INTO tb_comentarios(
                         data_hora, nome, comentario) VALUES( %s, %s, %s)""")
 
     mycursor.execute(sql, valores)

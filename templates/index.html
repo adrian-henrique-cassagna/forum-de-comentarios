@@ -24,6 +24,19 @@
             </div>
 
         </form>
+
+    {% for frases in sql %}
+        <br>
+
+        <div class="frases">
+            <span>
+                {{frases}}
+            </span>
+        </div>
+
+        <br>
+    {% endfor %}
+
     </main>
 </body>
 </html>
