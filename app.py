@@ -23,7 +23,6 @@ def cadastra_ms():
     database="db_feedback"
 )
 
-
     valores = (data_hora, usuario, menssagem)
     
     mycursor = mydb.cursor()
