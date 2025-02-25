@@ -7,3 +7,5 @@ create table if not exists tb_comentarios(
 	data_hora datetime,
     nome varchar(30) not null,
     comentario text);
+    
+select * from tb_comentarios
