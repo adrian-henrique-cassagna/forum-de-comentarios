@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow: hidden;
+}
+
+main{
+    background-image: url(../static/IMG/talon.webp);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-info{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 12px;
+}
+
+.form-info>input{
+    width: 150px;
+    border-radius: 20px;
+}
+.form-info>label{
+    margin: 6px;
+}
+.form-info>.comentario{
+    width: 500px;
+    height: 40px;
+
+    padding: 12px;
+}
+
+.btn-enviar{
+    width: 120px;
+    height: 35px;
+
+    margin: 12px;
+
+    border-radius: 25px;
+}
