@@ -28,7 +28,18 @@
         <br>
 
         <div class="frases">
-            <p></p>
+            {% for mensagem in mensagens %}
+            
+            <h2>Data</h2>
+            <p>{{mensagem.data_hora}}</p>
+
+            <h2>Usuario</h2>
+            <p>{{mensagem.usuario}}</p>
+
+            <h2>Menssagem</h2>
+            <p>{{mensagem.comentario}}</p>
+
+            {% endfor %}
         </div>
 
         <br>

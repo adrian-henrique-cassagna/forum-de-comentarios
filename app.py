@@ -1,41 +1,21 @@
 from flask import Flask, redirect, render_template, request
 import datetime
-import mysql.connector
-
+from model.control_mensagem import Mensagem
 
 app = Flask(__name__)
 
 @app.route("/")
 def home_page():
-    return render_template("index.html")
+    mensagens = Mensagem.lista_mensagens()
+    return render_template("index.html", mensagens = mensagens)
 
 @app.route("/post/menssagem", methods=["POST"])
 def cadastra_ms():
-
     usuario = request.form.get("nome")
-    data_hora = datetime.datetime.today()
-    menssagem = request.form.get("comentario")
+    mensagem = request.form.get("comentario")
 
-    mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="db_feedback"
-)
-
-    valores = (data_hora, usuario, menssagem)
+    Mensagem.cadastra_menssagem(usuario, mensagem)
     
-    mycursor = mydb.cursor()
-
-    sql = ("""INSERT INTO tb_comentarios(
-                        data_hora, nome, comentario) VALUES( %s, %s, %s)""")
-
-    mycursor.execute(sql, valores)
-    
-    mydb.commit()
-    mycursor.close()
-    mydb.close()
-
     return redirect("/")
 
 if __name__ == __name__:
