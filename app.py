@@ -23,5 +23,10 @@ def deleta_mensagem(codigo):
     Mensagem.deleta_mensagem(codigo)
     return redirect("/")
 
+@app.route("/curtidas/<curtidas>")
+def curtidas_add(curtida):
+    Mensagem.curtidas(curtida)
+    return redirect("/")
+
 if __name__ == __name__:
     app.run(debug=True)

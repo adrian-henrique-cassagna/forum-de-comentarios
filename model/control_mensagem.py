@@ -26,7 +26,7 @@ class Mensagem:
 
         mycursor = conexao_db.cursor(dictionary=True)
 
-        sql = ("""select data_hora, nome, comentario, cod_comentario from tb_comentarios""")
+        sql = ("""select data_hora, nome, comentario, cod_comentario, curtidas from tb_comentarios""")
 
         mycursor.execute(sql)
         resultado = mycursor.fetchall()
@@ -45,6 +45,21 @@ class Mensagem:
         sql = (""" DELETE from tb_comentarios where cod_comentario = %s; """)
 
         valor = (codigo,)
+
+        mycursor.execute(sql, valor)
+
+        conexao.commit()
+        mycursor.close()
+        conexao.close()
+
+    def curtidas(curtidas):
+        conexao = cx_db.Conexao_db.cria_conexao()
+
+        mycursor = conexao.cursor()
+
+        sql = (""" select cutidas from tb_comentarios; """)
+
+        valor = (curtidas,)
 
         mycursor.execute(sql, valor)
 
