@@ -29,16 +29,15 @@
 
         <div class="frases">
             {% for mensagem in mensagens %}
-            
-            <h2>Data</h2>
-            <p>{{mensagem.data_hora}}</p>
+            <div class="v1">
+                <h2>Usuario: {{mensagem.nome}}</h2>
+                <br>
+                <h2>Menssagem: {{mensagem.comentario}}</h2>
 
-            <h2>Usuario</h2>
-            <p>{{mensagem.usuario}}</p>
-
-            <h2>Menssagem</h2>
-            <p>{{mensagem.comentario}}</p>
-
+                <a href="/deleta_mensagem/{{mensagem.cod_comentario}}">Excluir</a>
+                <button>I Like</button>
+                <button>not like</button>
+            </div>
             {% endfor %}
         </div>
 

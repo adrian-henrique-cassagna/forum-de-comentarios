@@ -4,9 +4,10 @@ class Conexao_db:
 
     def cria_conexao():
         mydb = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
+            port = 3306,
+            host="10.110.134.2",
+            user="3ds",
+            password="banana",
             database="db_feedback"
         )
         
