@@ -18,8 +18,9 @@ def cadastra_ms():
     
     return redirect("/")
 
-@app.route("/deleta_mensagem/<codigo>", methods=["POST"])
+@app.route("/deleta_mensagem/<codigo>")
 def deleta_mensagem(codigo):
+    Mensagem.deleta_mensagem(codigo)
     return redirect("/")
 
 if __name__ == __name__:
