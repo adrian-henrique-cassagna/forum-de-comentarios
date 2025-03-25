@@ -33,10 +33,11 @@
                 <h2>Usuario: {{mensagem.nome}}</h2>
                 <br>
                 <h2>Mensagem: {{mensagem.comentario}}</h2>
-
+                <br>
                 <a href="/deleta_mensagem/{{mensagem.cod_comentario}}">Excluir</a>
-                <a href="">I Like: {{mensagem.curtidas}}</a>
-                <button>not like: </button>
+                <a href="/curtidas/{{mensagem.cod_comentario}}">I Like: {{mensagem.curtidas}}</a>
+                <a href="/del-curtidas/{{mensagem.cod_comentario}}">not like: {{mensagem.curtidas}}</a>
+                <br>
             </div>
             {% endfor %}
         </div>

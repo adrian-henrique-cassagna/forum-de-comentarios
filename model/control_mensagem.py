@@ -52,14 +52,46 @@ class Mensagem:
         mycursor.close()
         conexao.close()
 
-    def curtidas(curtidas):
+    def curtidas(codigo):
         conexao = cx_db.Conexao_db.cria_conexao()
 
         mycursor = conexao.cursor()
 
-        sql = (""" select cutidas from tb_comentarios; """)
+        sql = (""" UPDATE tb_comentarios SET curtidas = curtidas + 1 WHERE cod_comentario = %s; """)
 
-        valor = (curtidas,)
+        valor = (codigo,)
+
+        mycursor.execute(sql, valor)
+
+        conexao.commit()
+        mycursor.close()
+        conexao.close()
+
+    def del_curtidas(codigo):
+        conexao = cx_db.Conexao_db.cria_conexao()
+
+        mycursor = conexao.cursor()
+
+        sql = (""" UPDATE tb_comentarios SET curtidas = curtidas - 1 WHERE cod_comentario = %s; """)
+
+        valor = (codigo,)
+
+        mycursor.execute(sql, valor)
+
+        conexao.commit()
+        mycursor.close()
+        conexao.close()
+
+    def cadastro_usuario(email, nome, senha):
+
+        conexao = cx_db.Conexao_db.cria_conexao()
+
+        mycursor = conexao.cursor()
+
+        sql = (""" INSERT INTO tb_usuarios(
+                login, nome, senha) VALUES( %s, %s, %s); """)
+
+        valor = (email, nome, senha)
 
         mycursor.execute(sql, valor)
 

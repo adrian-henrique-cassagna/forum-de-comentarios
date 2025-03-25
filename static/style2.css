@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family:monospace ;
+}
+
+@keyframes slid{
+    0%{
+        background-color: red;
+    }
+
+    25%{
+        background-color: aquamarine;
+    }
+
+    50%{
+        background-color: brown;
+    }
+
+    75%{
+        background-color: blueviolet;
+    }
+
+    100%{
+        background-color: red;
+    }
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    animation: slid 1s infinite;
+}
+
+form{
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+}
+label{
+    font-size: 25px;
+    margin-top: 12px;
+}
+input{
+    width: 250px;
+    height: 30px;
+
+    margin-top: 6px;
+
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.div-info{
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-btn{
+    margin-top: 24px;
+}
+
+button{
+    width: 100px;
+    height: 45px;
+
+    border: 3px solid black;
+
+    border-radius: 20px;
+}
