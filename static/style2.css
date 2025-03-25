@@ -6,7 +6,7 @@
     font-family:monospace ;
 }
 
-@keyframes slid{
+@keyframes slide{
     0%{
         background-color: red;
     }
@@ -35,7 +35,7 @@ main{
     display: flex;
     justify-content: center;
 
-    animation: slid 1s infinite;
+    animation: slide 6s infinite;
 }
 
 form{

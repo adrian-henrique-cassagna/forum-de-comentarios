@@ -10,20 +10,21 @@
 
 <body>
     <main>
-        <form>
+        <form action="/cadastra/usuario" method="get">
             <div class="div-info">
-                <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" id="usuario">
 
                 <label for="e-mail">E-mail</label>
                 <input type="text" name="e-mail" id="e-mail">
+
+                <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" id="usuario">
 
                 <label for="senha">Senha</label>
                 <input type="text" name="senha" id="senha">
 
                 <div class="div-btn">
-                    <button class="btn-cadsatrar">Cadastrar</button>
-                    <button class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-cadsatrar">Cadastrar</button>
+                    <button type="reset" class="btn-cancelar">Cancelar</button>
                 </div>
 
             </div>

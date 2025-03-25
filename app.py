@@ -35,10 +35,15 @@ def curtidas_del(curtidas):
 @app.route("/cadastra/usuario")
 def cadastra_usuario(email, usuario, senha):
     email = request.form.get("email")
-    nome = request.form.get("usuario")
+    usuario = request.form.get("usuario")
     senha = request.form.get("senha")
 
     Mensagem.cadastro_usuario(email, usuario, senha)
     return redirect("/")
+
+@app.route("/login")
+def pag_login():
+    return render_template("login.html")
+
 if __name__ == __name__:
     app.run(debug=True)
