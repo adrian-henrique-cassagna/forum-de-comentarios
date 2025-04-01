@@ -44,6 +44,12 @@ form{
     flex-direction: column;
     justify-content: center;
 }
+form>div{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
 label{
     font-size: 25px;
     margin-top: 12px;
@@ -76,4 +82,7 @@ button{
     border: 3px solid black;
 
     border-radius: 20px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }

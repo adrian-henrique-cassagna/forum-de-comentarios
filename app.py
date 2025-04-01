@@ -13,8 +13,10 @@ def home_page():
 
 @app.route("/post/mensagem", methods=["POST"])
 def cadastra_ms():
+
     usuario = request.form.get("nome")
     mensagem = request.form.get("comentario")
+
     Mensagem.cadastra_menssagem(usuario, mensagem)
     return redirect("/mensagem")
 
@@ -35,6 +37,9 @@ def curtidas_del(curtidas):
 
 @app.route("/login")
 def pag_login():
+
+    
+    
     return render_template("login.html")
 
 @app.route("/cadastra/usuario", methods=["POST"])
