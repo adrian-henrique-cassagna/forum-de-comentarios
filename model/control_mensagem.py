@@ -81,20 +81,3 @@ class Mensagem:
         conexao.commit()
         mycursor.close()
         conexao.close()
-
-    def cadastro_usuario(email, nome, senha):
-
-        conexao = cx_db.Conexao_db.cria_conexao()
-
-        mycursor = conexao.cursor()
-
-        sql = (""" INSERT INTO tb_usuarios(
-                login, nome, senha) VALUES( %s, %s, %s); """)
-
-        valor = (email, nome, senha)
-
-        mycursor.execute(sql, valor)
-
-        conexao.commit()
-        mycursor.close()
-        conexao.close()
