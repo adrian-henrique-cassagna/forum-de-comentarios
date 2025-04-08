@@ -95,6 +95,14 @@ def cadastra_usuario():
     return redirect("/login")
 
 
+@app.route("/logout")
+def deslogar():
+    
+    session.clear()
+    return redirect("/cadastra/usuario")
+
+
+
 app.secret_key = "zacajaca21"
 
 if __name__ == "__main__":
