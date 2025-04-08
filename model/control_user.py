@@ -1,6 +1,6 @@
 import datetime
-from flask import request
-from DATA import conexao as cx_db
+from flask import session
+from DATA.conexao import Conexao_db as cx_db
 from hashlib import sha256
 
 class Usuario:
@@ -8,7 +8,7 @@ class Usuario:
 
         senha = sha256(senha.encode()).hexdigest()
 
-        conexao = cx_db.Conexao_db.cria_conexao()
+        conexao = cx_db.cria_conexao()
 
         mycursor = conexao.cursor()
 
@@ -20,21 +20,31 @@ class Usuario:
         mycursor.execute(sql, valor)
 
         conexao.commit()
-        mycursor.close()
         conexao.close()
-
     
     def logar(login, senha):
+
         senha = sha256(senha.encode()).hexdigest()
 
-        conexao = cx_db.Conexao_db.cria_conexao()
+        conexao = cx_db.cria_conexao()
 
-        mycursor = conexao.cursor()
+        mycursor = conexao.cursor(dictionary=True)
 
-        sql = (""" SELECT login, senha FROM tb_usuarios WHERE login = %s AND senha = %s """)
+        sql = (""" SELECT login, nome FROM tb_usuarios WHERE login = %s AND senha = %s """)
 
         valor = (login, senha)
 
         mycursor.execute(sql, valor)
 
         resultado = mycursor.fetchone()
+
+        conexao.close()
+
+        if resultado:
+
+            session["usuario"] = resultado["login"]
+            session["nome"] = resultado["nome"]
+
+            return True
+        else:
+            return False

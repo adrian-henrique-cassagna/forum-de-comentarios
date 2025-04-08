@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 
-    font-family:monospace ;
+    font-family:monospace;
 }
 
 @keyframes slide{
@@ -25,6 +25,21 @@
 
     100%{
         background-color: red;
+    }
+}
+
+@keyframes slide2{
+    0%{
+        color: red;
+    }
+    33%{
+        color: green;
+    }
+    66%{
+        color: blue;
+    }
+    100%{
+        color: red;
     }
 }
 
@@ -82,7 +97,16 @@ button{
     border: 3px solid black;
 
     border-radius: 20px;
+    margin-right: 20px;
+}
 
-    margin-left: 10px;
-    margin-right: 10px;
+.ir-logar{
+    margin-top: 20px;
+
+    text-decoration: none;
+    font-style: none;
+
+    animation: slide2 10s infinite;
+
+    font-size: 20px;
 }

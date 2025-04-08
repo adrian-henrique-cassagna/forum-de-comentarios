@@ -12,19 +12,15 @@ html{
 
 @keyframes slide{
     0%{
-        background-image: url(../static/IMG/4k-Blood-Moon-Talon-Skin-League-of-Legends-4K-Wallpaper.jpg);
+        background: linear-gradient(#FF7F50, #FFD700);
     }
-    25%{
-        background-image: url(../static/IMG/FRfCDAwXsAAIV8n.jpg);
-    }
+
     50%{
-        background-image: url(../static/IMG/talon.webp);
+        background: linear-gradient(#FFD700, #FF7F50, #FFD700);
     }
-    75%{
-        background-image: url(../static/IMG/thumb-1920-1347973.jpeg);
-    }
+    
     100%{
-        background-image: url(../static/IMG/4k-Blood-Moon-Talon-Skin-League-of-Legends-4K-Wallpaper.jpg);
+        background: linear-gradient(#FFD700, #FF7F50);
     }
 }
 
@@ -36,8 +32,6 @@ main{
 
     width: 100vw;
     height: 100vh;
-
-    background-image: url();
 
     display: flex;
 
@@ -93,11 +87,9 @@ main{
 
     display: flex;
     flex-direction: column;
-
-    border: 1px solid black;
-
-    display:flex;
     align-items: center;
+
+    border: 5px solid black;
 
     overflow-y: scroll;
     overflow-x: hidden;
@@ -105,11 +97,15 @@ main{
     color: white;
 }
 .v1{
-    border: 4px solid black;
+    border: 1px solid black;
 
     width: 100%;
 
     margin-top: 25px;
+
+    background-color: darkorange;
+
+    border-radius: 50px;
 }
 
 .v1 a{

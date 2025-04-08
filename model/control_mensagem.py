@@ -18,7 +18,7 @@ class Mensagem:
         mycursor.execute(sql, valores)
 
         conexao_db.commit()
-        mycursor.close()
+
         conexao_db.close()
 
     def lista_mensagens():
@@ -32,7 +32,6 @@ class Mensagem:
         resultado = mycursor.fetchall()
 
         conexao_db.commit()
-        mycursor.close()
         conexao_db.close()
 
         return resultado
@@ -49,7 +48,6 @@ class Mensagem:
         mycursor.execute(sql, valor)
 
         conexao.commit()
-        mycursor.close()
         conexao.close()
 
     def curtidas(codigo):
@@ -64,7 +62,6 @@ class Mensagem:
         mycursor.execute(sql, valor)
 
         conexao.commit()
-        mycursor.close()
         conexao.close()
 
     def del_curtidas(codigo):
@@ -79,5 +76,4 @@ class Mensagem:
         mycursor.execute(sql, valor)
 
         conexao.commit()
-        mycursor.close()
         conexao.close()
