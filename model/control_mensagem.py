@@ -77,3 +77,19 @@ class Mensagem:
 
         conexao.commit()
         conexao.close()
+
+    def pega_ultima_mensagem(usuario):
+        conexao_db = cx_db.Conexao_db.cria_conexao()
+
+        mycursor = conexao_db.cursor(dictionary=True)
+
+        sql = ("""select comentario from tb_comentarios WHERE nome = %s""")
+
+        valores = (usuario,)
+
+        mycursor.execute(sql, valores)
+        resultado = mycursor.fetchone()
+
+        conexao_db.close()
+
+        return resultado

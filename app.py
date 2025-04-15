@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session, jsonify
 import datetime
 from model.control_mensagem import Mensagem
 from model.control_user import Usuario
@@ -101,7 +101,20 @@ def deslogar():
     session.clear()
     return redirect("/cadastra/usuario")
 
+@app.route("/api/get/mensagens")
+def api_pega_mensagem():
+    
+    mensagens = Mensagem.lista_mensagens()
 
+    return jsonify(mensagens)
+
+
+@app.route("/api/get/ultima_mensagem/<usuario>")
+def ultima_mensagem(usuario):
+
+    mensagem = Mensagem.pega_ultima_mensagem(usuario)
+
+    return jsonify(mensagem)
 
 app.secret_key = "zacajaca21"
 
